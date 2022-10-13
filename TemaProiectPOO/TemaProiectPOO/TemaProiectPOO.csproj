@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7D3058E-E993-4297-86FF-F3A8B9B5DD83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TemaProiectPOO</RootNamespace>
+    <AssemblyName>TemaProiectPOO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>151-1516056_gold-graduation-cap-png-transparent-png-removebg-preview-_1_.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet17.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dataBaseStudentsDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dataBaseStudentsDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddNoteCatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddNoteCatalog.Designer.cs">
+      <DependentUpon>FormAddNoteCatalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddDiscipline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddDiscipline.Designer.cs">
+      <DependentUpon>FormAddDiscipline.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdd.Designer.cs">
+      <DependentUpon>FormAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDisciplina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDisciplina.Designer.cs">
+      <DependentUpon>FormDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCatalogNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCatalogNote.Designer.cs">
+      <DependentUpon>FormCatalogNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDashboard.Designer.cs">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStudents.Designer.cs">
+      <DependentUpon>FormStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TableLogIn.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormAddDiscipline.resx">
+      <DependentUpon>FormAddDiscipline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddNoteCatalog.resx">
+      <DependentUpon>FormAddNoteCatalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdd.resx">
+      <DependentUpon>FormAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDisciplina.resx">
+      <DependentUpon>FormDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCatalogNote.resx">
+      <DependentUpon>FormCatalogNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDashboard.resx">
+      <DependentUpon>FormDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStudents.resx">
+      <DependentUpon>FormStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <None Include="dataBaseStudentsDataSet.xsc">
+      <DependentUpon>dataBaseStudentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet.xss">
+      <DependentUpon>dataBaseStudentsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet1.xsc">
+      <DependentUpon>dataBaseStudentsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet1.xss">
+      <DependentUpon>dataBaseStudentsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet10.xsc">
+      <DependentUpon>dataBaseStudentsDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet10.xss">
+      <DependentUpon>dataBaseStudentsDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet11.xsc">
+      <DependentUpon>dataBaseStudentsDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet11.xss">
+      <DependentUpon>dataBaseStudentsDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet12.xsc">
+      <DependentUpon>dataBaseStudentsDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet12.xss">
+      <DependentUpon>dataBaseStudentsDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet13.xsc">
+      <DependentUpon>dataBaseStudentsDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet13.xss">
+      <DependentUpon>dataBaseStudentsDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet14.xsc">
+      <DependentUpon>dataBaseStudentsDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet14.xss">
+      <DependentUpon>dataBaseStudentsDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet15.xsc">
+      <DependentUpon>dataBaseStudentsDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet15.xss">
+      <DependentUpon>dataBaseStudentsDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet16.xsc">
+      <DependentUpon>dataBaseStudentsDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet16.xss">
+      <DependentUpon>dataBaseStudentsDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet17.xsc">
+      <DependentUpon>dataBaseStudentsDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet17.xss">
+      <DependentUpon>dataBaseStudentsDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet2.xsc">
+      <DependentUpon>dataBaseStudentsDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet2.xss">
+      <DependentUpon>dataBaseStudentsDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet3.xsc">
+      <DependentUpon>dataBaseStudentsDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet3.xss">
+      <DependentUpon>dataBaseStudentsDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet4.xsc">
+      <DependentUpon>dataBaseStudentsDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet4.xss">
+      <DependentUpon>dataBaseStudentsDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet5.xsc">
+      <DependentUpon>dataBaseStudentsDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet5.xss">
+      <DependentUpon>dataBaseStudentsDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet6.xsc">
+      <DependentUpon>dataBaseStudentsDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet6.xss">
+      <DependentUpon>dataBaseStudentsDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet7.xsc">
+      <DependentUpon>dataBaseStudentsDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet7.xss">
+      <DependentUpon>dataBaseStudentsDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet8.xsc">
+      <DependentUpon>dataBaseStudentsDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet8.xss">
+      <DependentUpon>dataBaseStudentsDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet9.xsc">
+      <DependentUpon>dataBaseStudentsDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="dataBaseStudentsDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dataBaseStudentsDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dataBaseStudentsDataSet9.xss">
+      <DependentUpon>dataBaseStudentsDataSet9.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4270946.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backspace-22-457881.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="151-1516056_gold-graduation-cap-png-transparent-png-removebg-preview-_1_.ico" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\download.jpg" />
+    <None Include="Resources\jRtm6n.jpg" />
+    <None Include="Resources\107170028-dashboard-vector-icon-isolated-on-transparent-background-dashboard-logo-concept.jpg" />
+    <None Include="Resources\SeekPng.com_computer-monitor-icon-png_1967036.png" />
+    <None Include="Resources\login-icon-17.jpg" />
+    <None Include="Resources\this-is-a-graphic-reation-of-a-pad-lock-username-and-password-icon-115534595184fsadfncq6.png" />
+    <None Include="Resources\password-icon-png-371054-free-icons-library-password-icon-png-808_980.jpg" />
+    <None Include="Resources\1727561.png" />
+    <None Include="Resources\225-2259153_collection-of-free-encumbering-report-icon-png-free-removebg-preview.png" />
+    <None Include="Resources\225-2259153_collection-of-free-encumbering-report-icon-png-free-removebg-preview.ico" />
+    <None Include="Resources\circle-cropped.png" />
+    <None Include="Resources\circle-cropped.ico" />
+    <None Include="Resources\circle-cropped %281%29.png" />
+    <None Include="Resources\circle-cropped %281%29.ico" />
+    <None Include="Resources\circle-cropped %282%29.ico" />
+    <None Include="Resources\circle-cropped %283%29.ico" />
+    <None Include="Resources\circle-cropped %284%29.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\logo_ro-RO %281%29.png" />
+    <None Include="Resources\logo_ro-RO.png" />
+    <None Include="Resources\151-1516056_gold-graduation-cap-png-transparent-png-removebg-preview %281%29.png" />
+    <None Include="Resources\151-1516056_gold-graduation-cap-png-transparent-png-removebg-preview1.png" />
+    <None Include="Resources\151-1516056_gold-graduation-cap-png-transparent-png-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
